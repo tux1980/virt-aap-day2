@@ -10,20 +10,13 @@
 
 - name: Stop VM using OpenShift API
   ansible.builtin.uri:
-    url: "https://api.ocp4.kimmlingen.org:6443/apis/subresources.kubevirt.io/v1//namespaces/vm/virtualmachines/{{ item.metadata.name }}/stop"
+    url: "https://api.ocp4.kimmlingen.org:6443/apis/subresources.kubevirt.io/v1/namespaces/vm/virtualmachines/{{ item.metadata.name }}/stop"
     method: PUT
     headers:
       Authorization: "Bearer {{ OCP_BEARER_TOKEN }}"
-      # Neu!
       Content-Type: "application/json"
-      #Bis hierher!
-    #Neu
     body: "{}" 
     body_format: json 
-    validate_certs: false
-    status_code:
-      - 202
-    #Bis hierher!
     validate_certs: false
     status_code:
       - 202
