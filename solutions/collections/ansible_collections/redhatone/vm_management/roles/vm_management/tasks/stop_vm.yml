@@ -14,6 +14,16 @@
     method: PUT
     headers:
       Authorization: "Bearer {{ OCP_BEARER_TOKEN }}"
+      # Neu!
+      Content-Type: "application/json"
+      #Bis hierher!
+    #Neu
+    body: "{}" 
+    body_format: json 
+    validate_certs: false
+    status_code:
+      - 202
+    #Bis hierher!
     validate_certs: false
     status_code:
       - 202
