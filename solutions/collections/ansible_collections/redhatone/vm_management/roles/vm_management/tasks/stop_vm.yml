@@ -30,4 +30,5 @@
   loop: "{{ vm_info.resources }}"
   loop_control:
     label: "{{ item.metadata.name }}"
-  changed_when: item.status.printableStatus != "Stopped"
+  #changed_when: item.status.printableStatus != "Stopped"
+  changed_when: true
