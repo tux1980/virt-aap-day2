@@ -10,7 +10,7 @@
 
 - name: Stop VM using OpenShift API
   ansible.builtin.uri:
-    url: "{{ OCP_HOST }}/apis/subresources.kubevirt.io/v1/namespaces/{{ vm_namespace }}/virtualmachines/{{ item.metadata.name }}/stop"
+    url: "https://api.ocp4.kimmlingen.org:6443/apis/subresources.kubevirt.io/v1//namespaces/vm/virtualmachines/{{ item.metadata.name }}/stop"
     method: PUT
     headers:
       Authorization: "Bearer {{ OCP_BEARER_TOKEN }}"
